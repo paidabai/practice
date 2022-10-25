@@ -10,6 +10,7 @@
 <body>
     <script>
         let deepClone = (obj) => {
+            if (!obj || typeof obj !== 'object') return
             let newObj = obj instanceof Array ? [] : {}
             for (const item in obj) {
                 const newItem = typeof obj[item] == 'object' ? deepClone(obj[item]) : obj[item]
