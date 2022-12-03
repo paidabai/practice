@@ -1,0 +1,64 @@
+/* 父盒子 */
+/* .box {
+    width: 500px;
+    height: 500px;
+    /* 水平居中，距离顶部100px */
+   /* margin: 100px auto;
+    background-color: #3ba0e9;
+} */
+
+/* 子盒子 */
+/* .children-box {
+    width: 100px;
+    height: 100px;
+    background-color: #7dbcea;
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+/* 
+    1.父盒子没设置相对定位，子盒子设置position: absolute;（绝对定位），子盒子设置 top，bottom，left，right时是相对与整个页面的左上角移动（脱离文档流不占位）像浮动
+ */
+
+ /* ----------------------------------------------------------------------------------------------------------- */
+
+/* 父盒子 */
+.box {
+    width: 500px;
+    height: 500px;
+    /* 水平居中，距离顶部100px */
+    margin: 100px auto;
+    background-color: #3ba0e9;
+    position: relative;
+}
+
+/* 子盒子 */
+/* .children-box {
+    width: 100px;
+    height: 100px;
+    background-color: #7dbcea;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+} */
+
+/* 
+    2.父盒子设置相对定位，子盒子设置position: absolute;（绝对定位），子盒子设置 top，bottom，left，right时是相对与父盒子左上角移动
+ */
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+ /*
+    3.利用position设置子盒子水平垂直居中
+*/
+
+.children-box {
+    width: 100px;
+    height: 100px;
+    background-color: #7dbcea;
+    position: absolute;
+    /* 父元素高度（500px）的一半减去（-）子元素高度（100px）的一半 */
+    top: calc(500px / 2 - 100px / 2);
+    left: calc(500px / 2 - 100px / 2);
+}
